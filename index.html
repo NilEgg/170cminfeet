@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://170cminfeet.com/">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!--<script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -19,37 +19,73 @@
                             darkgray: '#86868b',
                             blue: '#0071e3',
                             darkblue: '#0077ED'
-                        }
+                        },
+                        'link-color': '#0057b7',
+                        'link-hover': '#003d82'
                     }
                 }
             }
         }
-    </script>
+    </script>-->
     <style>
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
+        /* 提高对比度的颜色变量 */
+        :root {
+            --text-dark: #1a1a1a;
+            --text-medium: #333333;
+            --link-color: #0057b7;
+            --link-hover: #003d82;
+        }
+        /* 应用高对比度文本颜色 */
+        .text-apple-darkgray {
+            color: var(--text-medium) !important;
+        }
+        /* 提高表单标签对比度 */
+        .text-gray-700 {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+        }
+        /* 表格样式 */
         .height-table {
             border-collapse: collapse;
             width: 100%;
         }
         .height-table th, .height-table td {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #c5c7ca;
             padding: 8px 12px;
             text-align: center;
+            color: var(--text-dark);
         }
         .height-table th {
-            background-color: #f9fafb;
+            background-color: #e9ecef;
+            color: var(--text-dark);
+            font-weight: 600;
         }
         .height-table tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #f5f7fa;
         }
         .height-table tr:hover {
-            background-color: #e5e7eb;
+            background-color: #e2e6ea;
             transition: background-color 0.2s ease;
         }
         .height-table tr.bg-apple-gray:hover {
-            background-color: #dcdcdf !important;
+            background-color: #d3d7db !important;
+        }
+        /* 改善表单可访问性 */
+        input[type="number"] {
+            border: 2px solid #6b7280;
+        }
+        input[type="number"]:focus {
+            border-color: #0057b7;
+            outline: 2px solid #0057b7;
         }
     </style>
     <!-- Basic OG Meta -->
@@ -68,27 +104,19 @@
     <meta name="twitter:site" content="@Dustin_Egg" />
 
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-24Y47S08SF"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-24Y47S08SF');
-</script>
 <body class="bg-white text-gray-900">
-    <header class="bg-apple-gray py-4 shadow-sm">
+    <header class="bg-white py-4 shadow-sm border-b border-gray-200">
         <div class="container mx-auto px-4 md:px-8">
             <nav class="flex justify-between items-center">
-                <a href="/" class="flex items-center">
+                <a href="/" class="flex items-center" aria-label="170cminfeet Home">
                     <img src="/logo.webp" alt="170cminfeet Logo" class="h-10 mr-3" style="width: 40px; height: 40px;" width="40" height="40">
-                    <span class="text-xl font-semibold">170cminfeet</span>
+                    <span class="text-xl font-semibold text-gray-900">170cminfeet</span>
                 </a>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#converter" class="hover:text-apple-blue transition-colors">Converter</a>
-                    <a href="#height-table" class="hover:text-apple-blue transition-colors">Height Table</a>
-                    <a href="#about" class="hover:text-apple-blue transition-colors">About</a>
+                    <a href="#converter" class="text-gray-800 hover:text-link-color transition-colors font-medium">Converter</a>
+                    <a href="#height-table" class="text-gray-800 hover:text-link-color transition-colors font-medium">Height Table</a>
+                    <a href="#about" class="text-gray-800 hover:text-link-color transition-colors font-medium">About</a>
                 </div>
             </nav>
         </div>
@@ -102,49 +130,51 @@
                 <!--量身高图标-->
                 <div class="w-full md:w-1/2 flex justify-center">
                     <svg id="height-svg" xmlns="http://www.w3.org/2000/svg" width="240" height="300" viewBox="0 0 240 300" class="max-w-full" alt="170 cm in feet">
-                        <rect x="80" y="10" width="40" height="280" fill="#f5f5f7" stroke="#86868b" stroke-width="2"/>
-                        <line x1="70" y1="10" x2="130" y2="10" stroke="#0071e3" stroke-width="2"/>
-                        <text x="140" y="15" font-family="Arial" font-size="12" fill="#0071e3" textLength="90">200 cm / 6.56 ft</text>
-                        <line x1="70" y1="290" x2="130" y2="290" stroke="#0071e3" stroke-width="2"/>
-                        <text x="140" y="295" font-family="Arial" font-size="12" fill="#0071e3" textLength="70">0 cm / 0 ft</text>
-                        <text id="height-warning" x="100" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#FF3B30" font-weight="bold" visibility="hidden">Wow, you're so tall!</text>
-                        <line id="height-marker-line" x1="70" y1="150" x2="130" y2="150" stroke="#0071e3" stroke-width="2"/>
-                        <text id="height-marker-text" x="140" y="155" font-family="Arial" font-size="12" fill="#0071e3" textLength="90">170 cm / 5.58 ft</text>
-                        <circle id="height-marker-circle" cx="100" cy="150" r="5" fill="#0071e3"/>
-                        <text id="height-marker-cm" x="50" y="155" text-anchor="end" font-family="Arial" font-size="12" fill="#0071e3">170 cm</text>
+                        <rect x="80" y="10" width="40" height="280" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+                        <line x1="70" y1="10" x2="130" y2="10" stroke="#0057b7" stroke-width="2"/>
+                        <text x="140" y="15" font-family="Arial" font-size="12" fill="#0057b7" textLength="90" font-weight="bold">200 cm / 6.56 ft</text>
+                        <line x1="70" y1="290" x2="130" y2="290" stroke="#0057b7" stroke-width="2"/>
+                        <text x="140" y="295" font-family="Arial" font-size="12" fill="#0057b7" textLength="70" font-weight="bold">0 cm / 0 ft</text>
+                        <text id="height-warning" x="100" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#d32f2f" font-weight="bold" visibility="hidden">Wow, you're so tall!</text>
+                        <line id="height-marker-line" x1="70" y1="150" x2="130" y2="150" stroke="#0057b7" stroke-width="2"/>
+                        <text id="height-marker-text" x="140" y="155" font-family="Arial" font-size="12" fill="#0057b7" textLength="90" font-weight="bold">170 cm / 5.58 ft</text>
+                        <circle id="height-marker-circle" cx="100" cy="150" r="5" fill="#0057b7"/>
+                        <text id="height-marker-cm" x="50" y="155" text-anchor="end" font-family="Arial" font-size="12" fill="#0057b7" font-weight="bold">170 cm</text>
                     </svg>
                 </div>
                 
-                <div id="converter" class="w-full md:w-1/2 bg-apple-gray p-6 rounded-xl shadow-md">
+                <div id="converter" class="w-full md:w-1/2 bg-white p-6 rounded-xl shadow-md border border-gray-300">
                     <h2 class="text-2xl font-bold mb-4">Height Converter</h2>
                     <div class="mb-4">
                         <label for="cm-input" class="block text-sm font-medium text-gray-700 mb-1">Centimeters (cm)</label>
-                        <input type="number" id="cm-input" value="170" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue">
+                        <input type="number" id="cm-input" value="170" class="w-full px-4 py-2 rounded-md" aria-describedby="cm-description">
+                        <div id="cm-description" class="sr-only">Enter height in centimeters to convert to feet</div>
                     </div>
                     <div class="mb-4">
                         <label for="feet-input" class="block text-sm font-medium text-gray-700 mb-1">Feet (decimal)</label>
-                        <input type="number" id="feet-input" value="5.58" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue">
+                        <input type="number" id="feet-input" value="5.58" step="0.01" class="w-full px-4 py-2 rounded-md" aria-describedby="feet-description">
+                        <div id="feet-description" class="sr-only">Enter height in feet to convert to centimeters</div>
                     </div>
                     <div class="mb-4">
-                        <label for="feet-inches-input" class="block text-sm font-medium text-gray-700 mb-1">Feet and Inches</label>
+                        <label for="feet-whole" class="block text-sm font-medium text-gray-700 mb-1">Feet and Inches</label>
                         <div class="flex gap-2">
                             <div class="w-1/2">
-                                <input type="number" id="feet-whole" value="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
-                                <span class="text-xs text-apple-darkgray">feet</span>
+                                <input type="number" id="feet-whole" value="5" class="w-full px-4 py-2 rounded-md focus:outline-none" readonly aria-label="Feet value">
+                                <label for="feet-whole" class="text-xs text-apple-darkgray">feet</label>
                             </div>
                             <div class="w-1/2">
-                                <input type="number" id="inches" value="6.93" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
-                                <span class="text-xs text-apple-darkgray">inches</span>
+                                <input type="number" id="inches" value="6.93" step="0.01" class="w-full px-4 py-2 rounded-md focus:outline-none" readonly aria-label="Inches value">
+                                <label for="inches" class="text-xs text-apple-darkgray">inches</label>
                             </div>
                         </div>
                     </div>
                     <div class="mb-4">
                         <label for="total-inches" class="block text-sm font-medium text-gray-700 mb-1">Total Inches</label>
-                        <input type="number" id="total-inches" value="66.93" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
+                        <input type="number" id="total-inches" value="66.93" step="0.01" class="w-full px-4 py-2 rounded-md" readonly aria-label="Total inches value">
                     </div>
                     <div class="text-center">
-                        <p class="text-xl font-semibold mb-2">170 cm = 5.58 feet = 5 feet 6.93 inches = 66.93 inches</p>
-                        <p class="text-sm text-apple-darkgray">Conversions rounded to 2 decimal places</p>
+                        <p class="text-xl font-semibold mb-2 text-gray-900">170 cm = 5.58 feet = 5 feet 6.93 inches = 66.93 inches</p>
+                        <p class="text-sm text-gray-700">Conversions rounded to 2 decimal places</p>
                     </div>
                 </div>
             </div>
@@ -466,4 +496,15 @@
         });
     </script>
 </body>
+<link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+<script defer src="https://cdn.tailwindcss.com"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24Y47S08SF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-24Y47S08SF');
+</script>
 </html> 
