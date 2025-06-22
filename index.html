@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>170 cm in Feet – Convert cm to Feet and Inches</title>
+    <meta name="description" content="Convert 170 cm to feet and inches. Use our simple height converter for accurate cm to feet conversion and view a quick reference table.">
+    <link rel="canonical" href="https://170cminfeet.com/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            gray: '#f5f5f7',
+                            darkgray: '#86868b',
+                            blue: '#0071e3',
+                            darkblue: '#0077ED'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .height-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .height-table th, .height-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        .height-table th {
+            background-color: #f9fafb;
+        }
+        .height-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .height-table tr:hover {
+            background-color: #e5e7eb;
+            transition: background-color 0.2s ease;
+        }
+        .height-table tr.bg-apple-gray:hover {
+            background-color: #dcdcdf !important;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <header class="bg-apple-gray py-4 shadow-sm">
+        <div class="container mx-auto px-4 md:px-8">
+            <nav class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <img src="/logo.png" alt="170cminfeet Logo" class="h-10 mr-3">
+                    <span class="text-xl font-semibold">170cminfeet</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#converter" class="hover:text-apple-blue transition-colors">Converter</a>
+                    <a href="#height-table" class="hover:text-apple-blue transition-colors">Height Table</a>
+                    <a href="#about" class="hover:text-apple-blue transition-colors">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-8 py-8">
+        <section class="mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">170 cm in Feet</h1>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+                <!--量身高图标-->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <svg id="height-svg" xmlns="http://www.w3.org/2000/svg" width="240" height="300" viewBox="0 0 240 300" class="max-w-full" alt="170 cm in feet">
+                        <rect x="80" y="10" width="40" height="280" fill="#f5f5f7" stroke="#86868b" stroke-width="2"/>
+                        <line x1="70" y1="10" x2="130" y2="10" stroke="#0071e3" stroke-width="2"/>
+                        <text x="140" y="15" font-family="Arial" font-size="12" fill="#0071e3" textLength="90">200 cm / 6.56 ft</text>
+                        <line x1="70" y1="290" x2="130" y2="290" stroke="#0071e3" stroke-width="2"/>
+                        <text x="140" y="295" font-family="Arial" font-size="12" fill="#0071e3" textLength="70">0 cm / 0 ft</text>
+                        <text id="height-warning" x="100" y="30" text-anchor="middle" font-family="Arial" font-size="16" fill="#FF3B30" font-weight="bold" visibility="hidden">Wow, you're so tall!</text>
+                        <line id="height-marker-line" x1="70" y1="150" x2="130" y2="150" stroke="#0071e3" stroke-width="2"/>
+                        <text id="height-marker-text" x="140" y="155" font-family="Arial" font-size="12" fill="#0071e3" textLength="90">170 cm / 5.58 ft</text>
+                        <circle id="height-marker-circle" cx="100" cy="150" r="5" fill="#0071e3"/>
+                        <text id="height-marker-cm" x="50" y="155" text-anchor="end" font-family="Arial" font-size="12" fill="#0071e3">170 cm</text>
+                    </svg>
+                </div>
+                
+                <div id="converter" class="w-full md:w-1/2 bg-apple-gray p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Height Converter</h2>
+                    <div class="mb-4">
+                        <label for="cm-input" class="block text-sm font-medium text-gray-700 mb-1">Centimeters (cm)</label>
+                        <input type="number" id="cm-input" value="170" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue">
+                    </div>
+                    <div class="mb-4">
+                        <label for="feet-input" class="block text-sm font-medium text-gray-700 mb-1">Feet (decimal)</label>
+                        <input type="number" id="feet-input" value="5.58" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue">
+                    </div>
+                    <div class="mb-4">
+                        <label for="feet-inches-input" class="block text-sm font-medium text-gray-700 mb-1">Feet and Inches</label>
+                        <div class="flex gap-2">
+                            <div class="w-1/2">
+                                <input type="number" id="feet-whole" value="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
+                                <span class="text-xs text-apple-darkgray">feet</span>
+                            </div>
+                            <div class="w-1/2">
+                                <input type="number" id="inches" value="6.93" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
+                                <span class="text-xs text-apple-darkgray">inches</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="total-inches" class="block text-sm font-medium text-gray-700 mb-1">Total Inches</label>
+                        <input type="number" id="total-inches" value="66.93" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-apple-blue" readonly>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-xl font-semibold mb-2">170 cm = 5.58 feet = 5 feet 6.93 inches = 66.93 inches</p>
+                        <p class="text-sm text-apple-darkgray">Conversions rounded to 2 decimal places</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="height-table" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">Height Conversion Table: Centimeters to Feet</h2>
+            <p class="mb-4">Below is a comprehensive conversion table showing the equivalent values in feet, inches, and the combined feet and inches format for heights ranging from 160 cm to 175 cm. This table is particularly useful for quickly finding the imperial equivalent of common metric height measurements.</p>
+
+            <div class="overflow-x-auto">
+                <table class="height-table">
+                    <thead>
+                    <tr>
+                        <th>Centimeters</th>
+                        <th>Feet and inches</th>
+                        <th>Feet</th>
+                        <th>Inches</th>
+                    </tr>
+                    </thead>
+                                        <tbody>
+                        <tr>
+                            <td>160 cm</td>
+                            <td>5 feet 3 inches</td>
+                            <td>5.25 feet</td>
+                            <td>63.00 in</td>
+                        </tr>
+                        <tr>
+                            <td>161 cm</td>
+                            <td>5 feet 3.4 inches</td>
+                            <td>5.28 feet</td>
+                            <td>63.39 in</td>
+                        </tr>
+                        <tr>
+                            <td>162 cm</td>
+                            <td>5 feet 3.8 inches</td>
+                            <td>5.31 feet</td>
+                            <td>63.78 in</td>
+                        </tr>
+                        <tr>
+                            <td>163 cm</td>
+                            <td>5 feet 4.2 inches</td>
+                            <td>5.35 feet</td>
+                            <td>64.17 in</td>
+                        </tr>
+                        <tr>
+                            <td>164 cm</td>
+                            <td>5 feet 4.6 inches</td>
+                            <td>5.38 feet</td>
+                            <td>64.57 in</td>
+                        </tr>
+                        <tr>
+                            <td>165 cm</td>
+                            <td>5 feet 5 inches</td>
+                            <td>5.41 feet</td>
+                            <td>64.96 in</td>
+                        </tr>
+                        <tr>
+                            <td>166 cm</td>
+                            <td>5 feet 5.4 inches</td>
+                            <td>5.45 feet</td>
+                            <td>65.35 in</td>
+                        </tr>
+                        <tr>
+                            <td>167 cm</td>
+                            <td>5 feet 5.7 inches</td>
+                            <td>5.48 feet</td>
+                            <td>65.75 in</td>
+                        </tr>
+                        <tr>
+                            <td>168 cm</td>
+                            <td>5 feet 6.1 inches</td>
+                            <td>5.51 feet</td>
+                            <td>66.14 in</td>
+                        </tr>
+                        <tr>
+                            <td>169 cm</td>
+                            <td>5 feet 6.5 inches</td>
+                            <td>5.54 feet</td>
+                            <td>66.54 in</td>
+                        </tr>
+                        <tr class="bg-apple-gray">
+                            <td class="font-bold">170 cm</td>
+                            <td class="font-bold">5 feet 6.9 inches</td>
+                            <td class="font-bold">5.58 feet</td>
+                            <td class="font-bold">66.93 in</td>
+                        </tr>
+                        <tr>
+                            <td>171 cm</td>
+                            <td>5 feet 7.3 inches</td>
+                            <td>5.61 feet</td>
+                            <td>67.32 in</td>
+                        </tr>
+                        <tr>
+                            <td>172 cm</td>
+                            <td>5 feet 7.7 inches</td>
+                            <td>5.64 feet</td>
+                            <td>67.72 in</td>
+                        </tr>
+                        <tr>
+                            <td>173 cm</td>
+                            <td>5 feet 8.1 inches</td>
+                            <td>5.68 feet</td>
+                            <td>68.11 in</td>
+                        </tr>
+                        <tr>
+                            <td>174 cm</td>
+                            <td>5 feet 8.5 inches</td>
+                            <td>5.71 feet</td>
+                            <td>68.50 in</td>
+                        </tr>
+                        <tr>
+                            <td>175 cm</td>
+                            <td>5 feet 8.9 inches</td>
+                            <td>5.74 feet</td>
+                            <td>68.90 in</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-apple-darkgray mt-2">Conversions rounded to max 1 or 2 decimal places.</p>
+        </section>
+
+        <section id="about" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">Understanding Height Conversion: 170 cm in Feet</h2>
+            <p class="mb-4">Converting between centimeters and feet is a common need when comparing height measurements across different systems. 170 cm equals 5.58 feet, or 5 feet and 7 inches when expressed in the standard feet and inches format. This conversion is particularly useful when navigating between the metric system used in most countries and the imperial system used primarily in the United States.</p>
+            
+            <h3 class="text-2xl font-bold mt-6 mb-3">Why Convert 170 cm to Feet?</h3>
+            <p class="mb-4">Understanding your height in both centimeters and feet allows for easier communication across different measurement systems. A height of 170 cm is considered average in many countries that use the metric system. When converted to the imperial system, 170 cm in feet equals approximately 5.58 feet (5 feet and 7 inches), which provides context for those more familiar with feet and inches.</p>
+            
+            <h3 class="text-2xl font-bold mt-6 mb-3">Average Heights Around the World</h3>
+            <p class="mb-4">The average height for men in the United States is 175.4 centimeters, which is about 5 feet 9 inches. The average height for women is 161.7 centimeters, which is about 5 feet and 3 1/2 inches. This is according to a 2018 report published by the Centers for Disease Control and Prevention (CDC).<sup><a href="#references" class="text-apple-blue scroll-smooth">1</a></sup></p>
+            
+            <p class="mb-4">A height of 170 cm (5 feet 7 inches) is slightly below the average for American men but above the average for American women. In many European countries, the average male height ranges from 175 cm to 180 cm, while the average female height ranges from 162 cm to 170 cm. Therefore, 170 cm represents a height that falls within common global averages.</p>
+            
+            <h3 class="text-2xl font-bold mt-6 mb-3">How to Convert 170 cm to Feet</h3>
+            <p class="mb-4">The conversion from centimeters to feet follows a simple mathematical formula: divide the length value by 30.48, since 1 foot equals 30.48 centimeters.</p>
+            
+            <div class="bg-apple-gray p-4 rounded-lg mb-4">
+                <p class="font-medium">Formula: Feet = Centimeters ÷ 30.48</p>
+                <p>For 170 cm: 170 ÷ 30.48 = 5.577 feet ≈ 5.58 feet</p>
+            </div>
+            
+            <p class="mb-4">To convert the decimal part of feet to inches, multiply it by 12 (since 1 foot = 12 inches):</p>
+            
+            <div class="bg-apple-gray p-4 rounded-lg mb-4">
+                <p class="font-medium">Formula: Inches = (Decimal Part of Feet) × 12</p>
+                <p>For 0.58 feet: 0.58 × 12 = 6.96 inches ≈ 7 inches</p>
+            </div>
+            
+            <p class="mb-4">Therefore, 170 cm equals 5 feet and 7 inches.</p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">The Significance of 170 cm in Feet</h2>
+            <p class="mb-4">A height of 170 cm, which equals 5 feet 7 inches, is often considered a medium height in many countries. Understanding this conversion helps in various contexts, from medical records to fitness tracking, clothing sizes, and international travel. The conversion between 170 cm in feet is particularly relevant for individuals moving between countries that use different measurement systems.</p>
+
+            <h3 class="text-2xl font-bold mt-6 mb-3">Global Height Standards</h3>
+            <p class="mb-4">While the metric system (centimeters) is the international standard for height measurement, the imperial system (feet and inches) remains common in the United States and a few other countries. Converting 170 cm to feet (5.58 feet or 5 feet 7 inches) allows for easier comparison across these different standards.</p>
+            
+            <p class="mb-4">In medical and scientific contexts, heights are typically recorded in centimeters. However, in everyday conversation in the United States, heights are commonly expressed in feet and inches. Therefore, knowing that 170 cm equals 5 feet 7 inches facilitates clearer communication across cultural boundaries.</p>
+            
+            <h3 class="text-2xl font-bold mt-6 mb-3">170 cm in Different Contexts</h3>
+            <p class="mb-4">For clothing sizes, a height of 170 cm (5 feet 7 inches) often falls into the "medium" category in many international sizing systems. In sports, this height may be considered average or slightly below average for male athletes in sports like soccer or basketball, while being above average for female athletes in many disciplines.</p>
+            
+            <p class="mb-4">Understanding the conversion of 170 cm in feet also helps when interpreting growth charts for adolescents, as different countries may use different measurement systems for tracking physical development. A teenager who is 170 cm tall would be 5 feet 7 inches in the imperial system.</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="mb-6">
+                <h2 id="references" class="text-xl font-bold mb-3">References</h2>
+                <ol class="list-decimal list-inside">
+                    <li><a href="https://www.cdc.gov/nchs/data/nhsr/nhsr122-508.pdf" target="_blank" class="text-apple-blue hover:underline" rel="nofollow">Mean Body Weight, Height... Among Adults: United States, 1999–2000 Through 2015–2016.</a> National Health Statistics Reports, CDC.</li>
+                </ol>
+            </div>
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between">
+                <p>&copy; 2025 170cminfeet.com. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="/privacy-policy" class="hover:text-apple-blue transition-colors">Privacy Policy</a>
+                    <a href="/terms-of-service" class="hover:text-apple-blue transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cmInput = document.getElementById('cm-input');
+            const feetInput = document.getElementById('feet-input');
+            const feetWhole = document.getElementById('feet-whole');
+            const inchesInput = document.getElementById('inches');
+            
+            // SVG元素
+            const heightMarkerLine = document.getElementById('height-marker-line');
+            const heightMarkerText = document.getElementById('height-marker-text');
+            const heightMarkerCircle = document.getElementById('height-marker-circle');
+            const heightMarkerCm = document.getElementById('height-marker-cm');
+            
+            // Function to convert cm to feet
+            function cmToFeet(cm) {
+                return cm / 30.48;
+            }
+            
+            // Function to convert feet to cm
+            function feetToCm(feet) {
+                return feet * 30.48;
+            }
+            
+            // Function to convert decimal feet to feet and inches
+            function decimalFeetToFeetInches(decimalFeet) {
+                const feet = Math.floor(decimalFeet);
+                const inches = ((decimalFeet - feet) * 12).toFixed(2);
+                return { feet, inches };
+            }
+            
+            // Function to calculate total inches
+            function feetToTotalInches(decimalFeet) {
+                return (decimalFeet * 12).toFixed(2);
+            }
+            
+            // 更新SVG图表中的高度标记
+            function updateHeightSvg(cm, feet) {
+                // 获取警告文本元素
+                const heightWarning = document.getElementById('height-warning');
+                
+                // 显示或隐藏警告文本
+                if (cm > 200) {
+                    heightWarning.setAttribute('visibility', 'visible');
+                } else {
+                    heightWarning.setAttribute('visibility', 'hidden');
+                }
+                
+                // 计算y坐标 (SVG高度为300，表示200cm，顶部为200cm，底部为0cm)
+                // 所以y = 290 - (cm/200 * 280)
+                const yPosition = 290 - (Math.min(cm, 200)/200 * 280);
+                
+                // 更新线的位置
+                heightMarkerLine.setAttribute('y1', yPosition);
+                heightMarkerLine.setAttribute('y2', yPosition);
+                
+                // 更新文本的位置和内容
+                heightMarkerText.setAttribute('y', yPosition + 5);
+                const textContent = `${cm} cm / ${feet.toFixed(2)} ft`;
+                heightMarkerText.textContent = textContent;
+                // 确保文本长度适当
+                heightMarkerText.setAttribute('textLength', Math.max(70, textContent.length * 5.5));
+                
+                // 更新圆点的位置
+                heightMarkerCircle.setAttribute('cy', yPosition);
+                
+                // 更新左侧cm文本
+                heightMarkerCm.setAttribute('y', yPosition + 5);
+                heightMarkerCm.textContent = `${cm} cm`;
+            }
+            
+            // 获取总英寸输入框
+            const totalInchesInput = document.getElementById('total-inches');
+            
+            // Update feet when cm changes
+            cmInput.addEventListener('input', function() {
+                const cm = parseFloat(cmInput.value);
+                if (!isNaN(cm)) {
+                    const feet = cmToFeet(cm);
+                    feetInput.value = feet.toFixed(2);
+                    
+                    const { feet: wholeFeet, inches } = decimalFeetToFeetInches(feet);
+                    feetWhole.value = wholeFeet;
+                    inchesInput.value = inches;
+                    
+                    // 更新总英寸
+                    totalInchesInput.value = feetToTotalInches(feet);
+                    
+                    // 更新SVG图表
+                    updateHeightSvg(cm, feet);
+                }
+            });
+            
+            // Update cm when feet changes
+            feetInput.addEventListener('input', function() {
+                const feet = parseFloat(feetInput.value);
+                if (!isNaN(feet)) {
+                    const cm = feetToCm(feet);
+                    cmInput.value = cm.toFixed(2);
+                    
+                    const { feet: wholeFeet, inches } = decimalFeetToFeetInches(feet);
+                    feetWhole.value = wholeFeet;
+                    inchesInput.value = inches;
+                    
+                    // 更新总英寸
+                    totalInchesInput.value = feetToTotalInches(feet);
+                    
+                    // 更新SVG图表
+                    updateHeightSvg(cm, feet);
+                }
+            });
+            
+            // 添加平滑滚动效果
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // 初始化身高图表 - 确保页面加载时图表位置正确
+            const initialCm = parseFloat(cmInput.value);
+            const initialFeet = cmToFeet(initialCm);
+            updateHeightSvg(initialCm, initialFeet);
+        });
+    </script>
+</body>
+</html> 
