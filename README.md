@@ -2,7 +2,7 @@
 
 > A super lightweight, SEO-optimized height converter from **170cm to feet and inches** – built for speed, simplicity, and specificity.
 
-![Screenshot](https://170cminfeet.com/imgs/preview.png)
+![Screenshot](./imgs/og-image.png)
 
 ---
 
